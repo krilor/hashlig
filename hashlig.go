@@ -99,7 +99,7 @@ func main() {
 	}
 
 	// Check hash
-	if !isHash(h) {
+	if h != "" && !isHash(h) {
 		fmt.Print("Invalid hash. Should be hex string.\n")
 		os.Exit(1)
 	}
