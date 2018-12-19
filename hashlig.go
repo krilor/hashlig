@@ -93,8 +93,14 @@ func main() {
 	// Default algorithm
 	if a == "" {
 		a = "SHA256"
-	} else if !isHash(a) {
+	} else if !isAlgorithm(a) {
 		fmt.Printf("Invalid algorithm %s", a)
+		os.Exit(1)
+	}
+
+	// Check hash
+	if !isHash(h) {
+		fmt.Print("Invalid hash. Should be hex string.\n")
 		os.Exit(1)
 	}
 
